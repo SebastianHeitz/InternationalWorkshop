@@ -90,7 +90,6 @@ namespace InternationalWorkshop
 				}
 				else
 				{
-					Console.WriteLine(drive.IsReady);
 					MapNetworkDrive.Connect(driveletter, networkPath);
 				}
 			}
