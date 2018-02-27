@@ -60,11 +60,11 @@ namespace InternationalWorkshop
 						lbx_details.Items.Add("Vorhandene Netzlaufwerke werden entfernt.");
 						lbx_details.Update();
 						MapNetworkDrive.Disconnect(driveletter);
-						Thread.Sleep(1000);
+						Thread.Sleep(5000);
 						lbx_details.Items.Add("Netzlaufwerke werden verbunden.");
 						lbx_details.Update();
 						MapNetworkDrive.Connect(driveletter, networkPath);
-						Thread.Sleep(1000);
+						Thread.Sleep(5000);
 						string driveName = tbx_sharedFolderName.Text;
 						Thread.Sleep(5000);
 						PowerShell PowerShellInstance = PowerShell.Create();
@@ -74,7 +74,7 @@ namespace InternationalWorkshop
 						PowerShellInstance.Invoke();
 						PowerShellInstance.AddScript("$shell.NameSpace('T:').Self.Name = '" + driveName + "'");
 						PowerShellInstance.Invoke();
-						Thread.Sleep(1000);
+						Thread.Sleep(5000);
 						DriveInfo newdrive = new DriveInfo(driveletter);
 						if (newdrive.IsReady)
 						{
